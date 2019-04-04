@@ -32,7 +32,6 @@ Thumbs.db
 # Node Files #
 node_modules
 bower_components
-build
 ngfactory
 aot-compiled
 typings
@@ -42,5 +41,3 @@ dist
 public/__build__/**
 .webpack.json
 
-
-build/
