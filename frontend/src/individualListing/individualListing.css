@@ -1,0 +1,169 @@
+.subHeaderIndividualListing {
+  padding: 0px 0px 10px 0px;
+  font-size: 18px;
+}
+
+.listingProductMainImage {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 5px;
+  border: solid 1px rgba(26, 26, 26, 0.1);
+  cursor: zoom-in !important;
+}
+
+.shareListingShortLinkContainer {
+  visibility: initial !important;
+}
+
+.subProductImage {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-bottom: 3px;
+  margin-left: 1px;
+  padding: 0px;
+}
+
+.subProductImage:hover {
+  border: solid 3px #ffc107;
+  width: 30px;
+  height: 30px;
+}
+
+.subProductImageCurrent {
+  border: solid 3px #ffc107;
+  width: 30px;
+  height: 30px;
+}
+
+.individualListingDescription ::ng-deep * {
+  line-height: 1.5em;
+}
+
+.individualListingPageContainer {
+  height: Calc(100% - 110px);
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  padding: 20px;
+  position: relative;
+}
+
+
+.individualListingSubContainer {
+  transition: all .5s;
+  opacity: 0;
+}
+
+.breadcrumbContainer {
+  padding: 5px 10px 20px 0px;
+}
+
+.breadcrumbText {
+  color: #00aeeb;
+  cursor: pointer;
+  outline: none;
+}
+
+.listingContainer {
+  display: inline-block;
+  margin-left: 15px;
+  height: 200px;
+  position: relative;
+  max-width: 650px;
+}
+
+.listingHeaderContainer {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.listingHeaderRatingContainer {
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.listingVendorNameLink {
+  color: #00aeeb;
+  cursor: pointer;
+  outline: none;
+}
+
+.listingSingleAttributeContainer {
+  padding-top: 15px;
+}
+
+.listingOpenBazaarPurchaseLink {
+  cursor: pointer;
+  color: #00aeeb;
+}
+
+.listingAttributeDivider {
+  margin: 15px 5px 10px 0px;
+}
+
+.listingOptionsContainer {
+  margin-top: 15px;
+}
+
+.listingOptionsText {
+  padding: 0px;
+  font-size: 18px;
+}
+
+.listingSingleOptionContainer {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.listingSingleOptionSubContainer {
+  margin-top: 5px;
+}
+
+.listingSingleOptionNameText {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.listingSingleShippingOption {
+  margin-bottom: 10px;
+}
+
+.listingSingleShippingAttributeOptionContainer {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.listingSingleShippingAttributeOptionText {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.listingSingleShippingAttributeOptionSubContainer {
+  margin-top: 5px;
+}
+
+.listingSingleRatingSingleContainer {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.listingSingleRatingSingleStarListContainer {
+  color: #ffd701;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.listingSingleRatingSingleTimestampContainer {
+  color: #9e9e9e;
+  display: inline-block;
+  margin: 5px 5px;
+}
+
+
+.listingSingleRatingSingleReview {
+  margin-bottom: 15px;
+}

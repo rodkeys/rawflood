@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "mapRoot": "./",
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "outDir": "../dist/out-tsc",
+    "sourceMap": true,
+    "target": "es2015",
+    "baseUrl": "./src",
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "core-js",
+      "node"
+    ]
+  },
+
+
+  "files": [
+    "src/welcome/welcome.ts",
+   
+    "src/app/app.component.ts",
+    "src/app/app.module.ts",
+    "src/app/bootstrap.ts",
+    "src/app/app.routes.ts",
+    "src/common/headers.ts"
+  ],
+    "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+    "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": true }
+}

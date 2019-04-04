@@ -1,0 +1,80 @@
+<div class="genericPageContainer">
+  <searchBar> </searchBar>
+  <div class="bottomContainerMain">
+    <div class="leftMenuMain">
+      <div class="leftSideFilterContainer">
+        <div class="searchOptionsContainer">
+          <span class="searchOptionsText"> Search options </span>
+        </div>
+        <div class="searchOptionsSubContainer">
+          <div>
+            <span class="searchOptionsCurrencyText"> Main Currency: </span>
+            <div class="searchOptionsCurrencySubContainer">
+              <p-dropdown [options]="utility.allCurrenciesList" [(ngModel)]="utility.primaryCurrencySelected" [filter]="true" [style]="{'text-transform':'capitalize', 'min-width': '175px', 'color': '#222222 !important'}" (ngModelChange)="utility.updateSingleCurrencyCode(utility.primaryCurrencySelected)" [placeholder]="'USD'"></p-dropdown>
+            </div>
+          </div>
+          <div class="priceRangeContainer">
+            <span class="priceRangeText"> Price Range: </span>
+            <div class="priceRangeSubContainer">
+              <span> {{utility?.primaryCurrencySelected}} </span>
+              <input type="text" name="0" class="priceRangeInput" [(ngModel)]="searchService.minimumPrice" (ngModelChange)="searchService.resetListingPagination()">
+              <span> to {{utility?.primaryCurrencySelected}} </span>
+              <input type="text" name="99999" class="priceRangeInput" [(ngModel)]="searchService.maximumPrice" (ngModelChange)="searchService.resetListingPagination()">
+            </div>
+          </div>
+          <div class="averageReviewContainer">
+            <span class="averageReviewText"> Average Review: </span>
+            <div class="averageReviewSubContainer">
+              <div *ngFor="let starMinimum of [4, 3, 2, 1]">
+                <span class="averageReviewStarContainer starMinimum" (click)="searchService?.changeMinimumListingStars(starMinimum); searchService.resetListingPagination()">
+                  <i *ngFor="let starCount of utility?.returnRatingsArray(starMinimum)" class="fa singleStar" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"></i> <span class="clickableLink starDescription" [ngClass]="{'boldText': starMinimum == searchService?.minimumListingStars}"> & Up </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listingContainer">
+      <div>
+        <div class="searchTextSimple secondSearchTextSimple">
+          <div  class="resultsSearchContainer">
+            <span style="">
+              Results per page:
+            </span>
+          </div>
+          <p-dropdown [options]="displayNumberOptions" [(ngModel)]="searchService.displayNumber" (ngModelChange)="displayNumberChange()"></p-dropdown>
+        </div>
+      </div>
+      <div *ngIf="searchService.shownListings">
+        <div *ngIf="returnPageListings() && returnPageListings().length == 0" class="productContainer welcomePageProductContainer">
+          <span> No listings match your search criteria </span>
+          <i class="fa fa-search productSearchIcon" aria-hidden="true"></i>
+        </div>
+        <div *ngFor="let listing of returnPageListings()" class="productContainer">
+          <img src="{{'/api/returnSingleImage/' + listing.images[0].medium}}" alt="Image Not Found" onerror="this.src='assets/images/imageNotFound.jpg'" class="productImage" (click)="searchService.navigateToVendorListing(listing.vendor.peerId, listing.slug)">
+          <div class="productListingTitleContainer">
+            <div class="productListingTitle clickableLink welcomePageListingTitle" (click)="searchService.navigateToVendorListing(listing.vendor.peerId, listing.slug)">
+              {{listing.title}}
+            </div>
+            <div *ngIf="listing?.averageRating" class="averageRatingScoreContainer"> <i class="fa welcomePageSingleIconStar" *ngFor="let starCount of utility?.returnRatingsArray(listing?.averageRating)" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"> </i> <span class="listingRatingsLength"> ({{listing?.ratings?.length}}) </span> </div>
+            <div class="productListingVendor welcomePageProductListingVendor" [ngClass]="{productListingVendorAdjusted: listing?.ratingScore}">
+              <span class="vendorName">
+                <span class="clickableLink welcomePageVendorNameLink" [routerLink]="['/vendor', listing.vendor.peerId]"> {{listing.vendor.name}} </span>
+              </span>
+              <span class="welcomePagePriceAmount" *ngIf="listing?.contractType != 'CRYPTOCURRENCY'">
+                {{utility.returnBitcoinCurrencyConversion(utility.primaryCurrencySelected, utility?.returnBitcoinRate(listing?.pricingCurrency, listing?.price?.amount, 7))}} {{utility.primaryCurrencySelected}}
+              </span>
+              <span class="welcomePagePriceAmount" *ngIf="listing?.contractType == 'CRYPTOCURRENCY'">
+                {{listing.priceModifier}}%
+              </span>
+            </div>
+          </div>
+        </div>
+        <p-paginator rows="{{searchService.displayNumber}}" totalRecords="{{searchService.returnFilteredListings().length}}" (onPageChange)="paginateListings($event)" [style]="{'margin-bottom':'50px'}"></p-paginator>
+        <footerBar></footerBar>
+      </div>
+      <div class="loader welcomeLoaderIcon" *ngIf="!searchService?.shownListings"></div>
+    </div>
+  </div>
+</div>

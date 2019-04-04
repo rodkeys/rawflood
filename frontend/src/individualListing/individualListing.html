@@ -1,0 +1,115 @@
+<div class="genericPageContainer">
+  <searchBar> </searchBar>
+  <!-- Main page with listing information -->
+  <div class="individualListingPageContainer">
+    <div class="individualListingSubContainer" [ngClass]="{fadeIn: listing}">
+      <div class="breadcrumbContainer">
+        <span class="breadcrumbText clickableLink" [routerLink]="['/']">Home</span> >
+        <span class="breadcrumbText clickableLink" [routerLink]="['/vendor', listing?.vendor?.peerId]">{{listing?.vendor?.name}}</span> >
+        <span>{{listing?.slug}} </span>
+      </div>
+      <img src="{{'/api/returnSingleImage/' + listing?.images[0]?.medium}}" [style.width.px]="275" [style.height.px]="275" alt="Image not found" onerror="this.src='assets/images/imageNotFound.jpg'" class="listingProductMainImage" (click)="utility.currentImageBeingViewed = listing?.images[0].medium">
+      <div class="listingContainer">
+        <div class="listingHeaderContainer"> {{listing?.title}}
+          <div class="listingHeaderRatingContainer" *ngIf="listing?.ratings?.length > 0">
+            <i *ngFor="let starCount of utility?.returnRatingsArray(listing?.averageRating)" class="fa singleStar" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"></i>
+            <span> ({{listing?.ratings?.length}})</span>
+          </div>
+        </div>
+        <div *ngIf="listing?.expiredListing" style="margin-bottom: 20px;">
+          <p-messages [(value)]="expiredListingMessage" [closable]="false"></p-messages>
+        </div>
+        <div><span> Price: </span>
+          <span *ngIf="listing && listing.contractType != 'CRYPTOCURRENCY'"> {{utility.returnBitcoinCurrencyConversion(utility.primaryCurrencySelected, utility?.returnBitcoinRate(listing?.pricingCurrency, returnListingVariantPrice(), 7))}}
+            <p-dropdown [options]="utility.allCurrenciesList" [(ngModel)]="utility.primaryCurrencySelected" [filter]="true" [style]="{'text-transform':'capitalize', 'margin-left': '3px', 'position': 'relative', 'bottom': '1px'}" (ngModelChange)="utility.updateSingleCurrencyCode(utility.primaryCurrencySelected)">
+            </p-dropdown>
+          </span>
+          <span *ngIf="listing && listing.contractType == 'CRYPTOCURRENCY'"> {{listing.priceModifier}}%
+          </span>
+        </div>
+        <div class="listingSingleAttributeContainer">
+          <span> Vendor: </span>
+          <span [routerLink]="['/vendor', listing?.vendor?.peerId]" class="clickableLink listingVendorNameLink">{{listing?.vendor?.name}}</span>
+          <span *ngIf="listing?.vendorTotalRatingsCount > 0"> ({{listing?.vendorTotalRatingsCount}})</span>
+        </div>
+        <div class="listingSingleAttributeContainer">
+          <span> Accepted Currencies: </span>
+          <span> {{listing?.acceptedCurrencies}} </span>
+        </div>
+        <div class="listingSingleAttributeContainer">
+          <span> OpenBazaar Purchase Link: </span>
+          <a [href]="utility.sanitizeUrl('ob://' + listing?.vendor?.peerId + '/store/' + listing?.slug)" class="listingOpenBazaarPurchaseLink"> {{'ob://' + listing?.vendor?.peerId + '/store/' + listing?.slug}} </a>
+        </div>
+      </div>
+      <div class="listingOptionsContainer">
+        <div *ngIf="listing?.options?.length > 0">
+          <div class="listingOptionsText"> Options </div>
+          <div *ngFor="let option of listing?.options;" class="listingSingleOptionContainer">
+            <div class="listingSingleOptionSubContainer">
+              <span class="listingSingleOptionNameText"> {{option.name}}: </span>
+              <p-dropdown [options]="option.variantsFormatted" [(ngModel)]="option.variantSelected"></p-dropdown>
+            </div>
+          </div>
+          <hr class="listingAttributeDivider">
+        </div>
+        <div>
+          <div class="subHeaderIndividualListing"> Description </div>
+          <div *ngIf="listing?.description && listing?.description?.length > 0" [innerHtml]="listing?.description" class="individualListingDescription"> </div>
+          <div *ngIf="!listing?.description || listing?.description?.length == 0"> <i> No description was provided </i> </div>
+          <hr class="listingAttributeDivider" *ngIf="(listing?.termsAndConditions && listing?.termsAndConditions?.length > 0) || listing?.contractType == 'PHYSICAL_GOOD'">
+        </div>
+        <div *ngIf="listing?.termsAndConditions && listing?.termsAndConditions?.length > 0">
+          <div class="subHeaderIndividualListing"> Terms and Conditions </div>
+          <div [innerHtml]="listing?.termsAndConditions"> </div>
+          <hr class="listingAttributeDivider" *ngIf="listing?.contractType == 'PHYSICAL_GOOD'">
+        </div>
+        <div *ngIf="listing?.contractType == 'PHYSICAL_GOOD'">
+          <div class="subHeaderIndividualListing"> Shipping </div>
+          <div class="listingSingleShippingOption">
+            <div class="listingSingleShippingAttributeOptionContainer">
+              <div class="listingSingleShippingAttributeOptionSubContainer">
+                <span class="listingSingleShippingAttributeOptionText"> Shipping Type: </span>
+                <p-dropdown [options]="listing?.optionNamesFormatted" [(ngModel)]="listingOptions.shippingName" (ngModelChange)="resetShippingOptions()"></p-dropdown>
+              </div>
+            </div>
+            <div class="listingSingleShippingAttributeOptionContainer" *ngIf="listingOptions.shippingService">
+              <div class="listingSingleShippingAttributeOptionSubContainer">
+                <span class="listingSingleShippingAttributeOptionText"> Service: </span>
+                <p-dropdown [options]="returnCurrentShippingOption()?.servicesFormatted" [(ngModel)]="listingOptions.shippingService" (ngModelChange)="resetShippingOptions()"></p-dropdown>
+              </div>
+            </div>
+            <div class="listingSingleShippingAttributeOptionContainer">
+              <div class="listingSingleShippingAttributeOptionSubContainer">
+                <span class="listingSingleShippingAttributeOptionText"> Country: </span>
+                <p-dropdown [options]="returnCurrentShippingOption()?.regionsFormatted" [(ngModel)]="listingOptions.shippingCountry" [filter]="true" [style]="{'text-transform':'capitalize'}"></p-dropdown>
+              </div>
+            </div>
+          </div>
+          <p-messages *ngIf="returnCurrentShippingService()" [(value)]="listingOptions.shippingEstimate" [closable]="false"></p-messages>
+        </div>
+        <div *ngIf="listing?.ratings?.length > 0">
+          <hr class="listingAttributeDivider">
+          <div class="subHeaderIndividualListing"> Reviews ({{listing?.ratings?.length}}) </div>
+          <div *ngFor="let rating of listing?.ratings">
+            <div class="listingSingleRatingSingleContainer">
+              <span *ngIf="rating?.buyerName"> {{rating?.buyerName}} </span>
+              <span *ngIf="!rating?.buyerName"> Anonymous </span>
+            </div>
+            <div class="listingSingleRatingSingleStarListContainer">
+              <i *ngFor="let starCount of utility?.returnRatingsArray(rating.overallScore)" class="fa singleStar" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"></i>
+            </div>
+            <div class="listingSingleRatingSingleTimestampContainer">
+              {{utility.convertTime(convertRatingTimestamp(rating?.timestamp?.seconds)) }}
+            </div>
+            <div class="listingSingleRatingSingleReview" [innerHtml]="rating?.review">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loader genericLoader" *ngIf="!listing"></div>
+  </div>
+</div>
+<footerBar></footerBar>
+<!-- Component used to display a lightbox of product images  -->
+<docViewer *ngIf="utility.currentImageBeingViewed" [fileName]="'image.jpg'" [allImages]="listing?.images"> </docViewer>

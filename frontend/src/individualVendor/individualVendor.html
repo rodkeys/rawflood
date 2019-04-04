@@ -1,0 +1,54 @@
+<div class="genericPageContainer">
+  <searchBar> </searchBar>
+  <div class="individualVendorPageContainer">
+    <div class="individualVendorFadeContainer" [ngClass]="{fadeIn: vendor}">
+      <div class="individualVendorBreadcrumbContainer">
+        <span class="clickableLink individualVendorBreadcrumbClickableText" [routerLink]="['/']"> Home</span> >
+        <span class="individualVendorBreadcrumbText"> {{vendor?.name}} </span>
+      </div>
+      <div class="individualVendorProfileContainer">
+        <img class="individualVendorProfileImage" src="{{utility.convertImageHashToLink(vendor?.avatarHashes?.medium)}}" (click)="utility.currentImageBeingViewed = vendor?.avatarHashes?.medium" onerror="this.src='assets/images/imageNotFound.jpg'">
+
+        <div class="individualVendorNameText"> {{vendor?.name}} </div>
+        <div *ngIf="vendor?.stats?.averageRating && vendor?.stats?.averageRating > 0"> <i *ngFor="let starCount of utility?.returnRatingsArray(vendor?.stats?.averageRating)" class="fa individualVendorRatingsLength singleStar" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"></i> <span class="individualVendorListingRatingsLength">({{vendor?.stats?.ratingCount}})</span> </div>
+        <div class="individualVendorRatingsLengthDescriptionSeparator"> </div>
+        <div class="vendorDescription" [innerHtml]="vendor?.about"> </div>
+      </div>
+      <div class="individualVendorListingsListContainer">
+        <div class="individualVendorListingsText"> Vendor Listings </div>
+        <div class="individualVendorFiltersContainer">
+          <span>Currency: </span>
+          <p-dropdown [options]="utility.allCurrenciesList" [(ngModel)]="utility.primaryCurrencySelected" [filter]="true" [style]="{'text-transform':'capitalize'}" (ngModelChange)="utility.updateSingleCurrencyCode(utility.primaryCurrencySelected)"></p-dropdown>
+
+          <span class="vendorSingleFilterText">Results per page: </span>
+          <p-dropdown [options]="vendorListingsDisplayNumberOptions" [(ngModel)]="vendorListingDisplayNumber" (ngModelChange)="displayNumberChange()" [style]="{'width':'50px'}"></p-dropdown>
+        </div>
+        <div *ngFor="let listing of returnVendorListings() | orderBy : [vendorListingsSortBy]" class="productContainer vendorSingleListingListContainer">
+          <img src="{{utility.convertImageHashToLink(listing?.images[0]?.medium)}}" onerror="this.src='assets/images/imageNotFound.jpg'" alt="Image not found" class="productImage" (click)="searchService.navigateToVendorListing(vendor.peerId, listing.slug)">
+          <div class="productListingTitleContainer">
+            <div class="productListingTitle individualVendorListingTitle clickableLink" (click)="searchService.navigateToVendorListing(vendor.peerId, listing.slug)">
+              {{listing.title}}
+            </div>
+            <div *ngIf="listing?.ratings.length > 0" class="individualVendorListingRatingsContainer">
+              <i class="fa singleStar" *ngFor="let starCount of utility?.returnRatingsArray(listing.averageRating)" [ngClass]="{'fa-star': starCount, 'fa-star-o': !starCount, 'fa-star-half-o': starCount == 0.5}"> </i>
+              <span class="individualVendorListingsLength"> ({{listing?.ratings?.length}}) </span>
+            </div>
+            <div class="individualVendorListingPrice" *ngIf="listing?.contractType != 'CRYPTOCURRENCY'">
+              {{utility.returnBitcoinCurrencyConversion(utility.primaryCurrencySelected, utility?.returnBitcoinRate(listing?.pricingCurrency, listing?.price?.amount, 7))}} {{utility.primaryCurrencySelected}}
+            </div>
+            <div class="individualVendorListingPrice" *ngIf="listing?.contractType == 'CRYPTOCURRENCY'">
+              {{listing.priceModifier}}%
+            </div>
+          </div>
+        </div>
+        <div>
+          <p-paginator rows="{{vendorListingDisplayNumber}}" totalRecords="{{vendor?.listings?.length}}" (onPageChange)="paginateVendorListings($event)" [style]="{'margin-bottom':'50px'}"></p-paginator>
+        </div>
+        <footerBar></footerBar>
+      </div>
+    </div>
+    <div class="loader genericLoader" *ngIf="!vendor"></div>
+  </div>
+</div>
+<!-- Component used to display vendor profile here  -->
+<docViewer *ngIf="utility.currentImageBeingViewed" [fileName]="'First.jpg'"> </docViewer>

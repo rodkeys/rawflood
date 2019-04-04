@@ -1,0 +1,31 @@
+.updateStoreContainer {
+  width: 960px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.updateStoreInput {
+  border-radius: 4px;
+  border: 1px solid #c8cad5;
+  padding: 11px 14px 11px 10px;
+  background: rgba(255, 255, 255, 0.83);
+  color: #4b4b4b;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.updateStoreButton {
+  padding: 11px;
+  font-weight: normal;
+  margin-top: 11px;
+  cursor: pointer;
+  width: 140px;
+}
+
+.updateStoreSpinner {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}

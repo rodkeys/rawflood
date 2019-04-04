@@ -1,0 +1,130 @@
+.vendorDescription {
+  margin-top: 15px;
+  line-height: 1.5em;
+}
+
+.vendorDescription ::ng-deep * {
+  line-height: 1.25em;
+  max-width: 225px;
+  font-weight: normal;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.fa-star {
+  color: #ffd701;
+}
+
+.individualVendorPageContainer {
+  height: Calc(100% - 110px);
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  padding: 20px;
+  position: relative;
+}
+
+.vendorSingleFilterText {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.vendorSingleListingListContainer {
+  padding: 16px 0px 16px 3px;
+}
+
+.individualVendorFadeContainer {
+  transition: all .5s;
+  opacity: 0;
+}
+
+.individualVendorBreadcrumbContainer {
+  padding: 5px 10px 20px 0px;
+}
+
+.individualVendorBreadcrumbClickableText {
+  color: #00aeeb;
+  cursor: pointer;
+  outline: none;
+}
+
+.individualVendorBreadcrumbText {
+  outline: none;
+}
+
+.individualVendorProfileContainer {
+  width: 225px;
+  display: inline-block;
+}
+
+.individualVendorProfileImage {
+  width: 225px;
+  height: 225px;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid 1px rgba(26, 26, 26, 0.1);
+}
+
+.individualVendorListingsLength {
+  color: rgba(0, 0, 0, .9);
+}
+
+.individualVendorListingPrice {
+  margin: 8px 0px 0px 6px;
+  font-size: 16px;
+}
+
+.individualVendorNameText {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  outline: none;
+}
+
+.individualVendorListingTitle {
+  max-width: 425px;
+  display: inline-block;
+}
+
+.individualVendorListingRatingsContainer {
+  font-size: 10px;
+  margin-top: 2px;
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+.individualVendorRatingsLength {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.individualVendorRatingsLengthDescriptionSeparator {
+  border-top: solid 1px rgba(107, 107, 107, 0.2);
+  margin-top: 15px;
+}
+
+.individualVendorListingsText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.individualVendorListingsListContainer {
+  display: inline-block;
+  vertical-align: top;
+  width: Calc(100% - 265px);
+  margin-left: 20px;
+}
+
+.individualVendorFiltersContainer {
+  margin-top: 10px;
+}
+
+.individualVendorListingRatingsLength {
+  font-size: 16px;
+  position: relative;
+  bottom: 2px;
+}

@@ -1,0 +1,202 @@
+{
+    "name": config.searchEngine.name,
+    "logo": config.searchEngine.logo,
+    "options":
+    {
+        "type":
+        {
+            "type": "radio",
+            "label": "Type",
+            "options": [
+            {
+                "value": "any",
+                "label": "Any",
+                "checked": true,
+                "default": true
+            },
+            {
+                "value": "physical_good",
+                "label": "Physical Goods",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "cryptocurrency",
+                "label": "Cryptocurrency",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "digital_good",
+                "label": "Digital Goods",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "service",
+                "label": "Services",
+                "checked": false,
+                "default": false
+            }]
+        },
+        "acceptedCurrencies":
+        {
+            "type": "radio",
+            "label": "Accepted Currency",
+            "options": [
+            {
+                "value": "BTC",
+                "label": "Bitcoin",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "BCH",
+                "label": "Bitcoin Cash",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "LTC",
+                "label": "Litecoin",
+                "checked": false,
+                "default": false
+            },
+            {
+                "value": "ZEC",
+                "label": "Zcash",
+                "checked": false,
+                "default": false
+            }]
+        }
+    },
+    "links":
+    {
+        "self": "https://search.ob1.io/search?q=air\u0026pretty\u0026shipping=us",
+        "search": "https://search.ob1.io/search",
+        "listings": "https://search.ob1.io/search/listings"
+    },
+    "results":
+    {
+        "total": 5672,
+        "morePages": true,
+        "results": [
+        {
+            "type": "listing",
+            "relationships":
+            {
+                "moderators": ["Qma1uogRbJqDfs68cxgKkrDymH1WAsnhKgjvEo7gWSULBq"],
+                "vendor":
+                {
+                    "data":
+                    {
+                        "peerID": "QmWBSdbs7LLR7BdFgtKQA7CUq8aCzoTi74V7UwiwvfYpU5",
+                        "handle": "@yPayne",
+                        "avatarHashes":
+                        {
+                            "tiny": "QmTHCaDpznJStWvPUSiKNDd53VVZmPtnrHx5diGP5gskCx",
+                            "small": "QmfVecQaoy1pZD3wsHHC82kYg24yhVaqBsAzm5aJCabXPQ",
+                            "medium": "QmS1z4qW1SiDNtLD1Bfno8WEbFUV8qwb5CQxgR6BREyVTJ",
+                            "original": "QmRSJfL6rEuZ6fBaCfd1ZYXHTnPKj4ZZuEuMsNmbbFjLfH",
+                            "large": "QmWoNr88v9dnsJAZBkuZJAXjPGn1MBLobp3S6F8NnuZ1m3"
+                        }
+                    }
+                }
+            },
+            "data":
+            {
+                "hash": "",
+                "slug": "air-direct-amplifier",
+                "title": "Air Direct Amplifier",
+                "tags": [
+                    "culpa",
+                    "nihil",
+                    "sit",
+                    "nesciunt",
+                    "ad",
+                    "accusamus",
+                    "sit"
+                ],
+                "categories": [
+                    "Digital Goods"
+                ],
+                "contractType": "DIGITAL_GOOD",
+                "description": "unde illo tempore omnis corporis repellat non. et eum excepturi ipsam alias quae.\tquia voluptates sed et provident qui. inventore eligendi vel autem modi asperiores autem sed.",
+                "thumbnail":
+                {
+                    "tiny": "QmTHCaDpznJStWvPUSiKNDd53VVZmPtnrHx5diGP5gskCx",
+                    "small": "QmfVecQaoy1pZD3wsHHC82kYg24yhVaqBsAzm5aJCabXPQ",
+                    "medium": "QmS1z4qW1SiDNtLD1Bfno8WEbFUV8qwb5CQxgR6BREyVTJ",
+                    "original": "QmRSJfL6rEuZ6fBaCfd1ZYXHTnPKj4ZZuEuMsNmbbFjLfH",
+                    "large": "QmWoNr88v9dnsJAZBkuZJAXjPGn1MBLobp3S6F8NnuZ1m3"
+                },
+                "language": "",
+                "price":
+                {
+                    "currencyCode": "btc",
+                    "amount": 34
+                },
+                "nsfw": true
+            }
+        },
+        {
+            "type": "listing",
+            "relationships":
+            {
+                "moderators": ["Qma1uogRbJqDfs68cxgKkrDymH1WAsnhKgjvEo7gWSULBq"],
+                "vendor":
+                {
+                    "data":
+                    {
+                        "peerID": "QmSJNNBacfjY9F6gPizFpfpgwpGfpRy8LWKRPN6At9AgbU",
+                        "handle": "@KimberlyHicks",
+                        "avatarHashes":
+                        {
+                            "tiny": "QmeSjo2YMdEaMzt1JCviDCfVZ1aGJdFvRKfjQf3sHe5ZgG",
+                            "small": "QmcyVgwCXg3phR6NbRHK5sDZFyyH4pBLh1TGGkWCWT68hV",
+                            "medium": "QmX3fhZXxPUpNsqdGZtsdaSSJApDptfFcSKWbCoHXJHXLo",
+                            "original": "QmZuZ7W2yJ8tsvhKTcXu2zyZZoMxTqSEK6zKQUpefQbt4t",
+                            "large": "QmPrN4Li71nsmZ2SjAYhrVgDAaDYN34dWyg2gS4Ubz942d"
+                        }
+                    }
+                }
+            },
+            "data":
+            {
+                "hash": "",
+                "slug": "air-air-compressor",
+                "title": "Air Air Compressor",
+                "tags": [
+                    "rem",
+                    "id",
+                    "eum",
+                    "doloribus",
+                    "magnam",
+                    "quaerat",
+                    "et",
+                    "quaerat"
+                ],
+                "categories": [
+                    "Arts"
+                ],
+                "contractType": "SERVICE",
+                "description": "ut sunt suscipit labore dolore.\tet ab voluptates. sit reiciendis vero vel sit reiciendis. autem velit soluta voluptate vel quia.\toptio quia omnis voluptatem nemo.",
+                "thumbnail":
+                {
+                    "tiny": "QmeSjo2YMdEaMzt1JCviDCfVZ1aGJdFvRKfjQf3sHe5ZgG",
+                    "small": "QmcyVgwCXg3phR6NbRHK5sDZFyyH4pBLh1TGGkWCWT68hV",
+                    "medium": "QmX3fhZXxPUpNsqdGZtsdaSSJApDptfFcSKWbCoHXJHXLo",
+                    "original": "QmZuZ7W2yJ8tsvhKTcXu2zyZZoMxTqSEK6zKQUpefQbt4t",
+                    "large": "QmPrN4Li71nsmZ2SjAYhrVgDAaDYN34dWyg2gS4Ubz942d"
+                },
+                "language": "",
+                "price":
+                {
+                    "currencyCode": "btc",
+                    "amount": 29
+                },
+                "nsfw": true
+            }
+        }]
+    }
+}

@@ -1,0 +1,472 @@
+.categoryName {
+  height: 30px;
+}
+
+.welcomeText {
+  position: absolute;
+  top: 140px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.pageContainer {
+  color: #37474f;
+  font-weight: 400;
+  font-size: 1em;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+.mainTitle {
+  font-family: sans-serif;
+  font-size: 4em;
+  font-weight: 200;
+  letter-spacing: -1px;
+  color: #F9FCFF;
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+  text-align: center;
+}
+
+.secondaryTitle {
+  font-size: 1.5em;
+  font-weight: 200;
+  letter-spacing: -1px;
+  color: #F9FCFF;
+  padding: 0px;
+  margin: 0px;
+  background: transparent;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.topLeftLogo {
+  position: absolute;
+  top: 0px;
+  padding: 16px 0px 0px 41px;
+  width: 138px;
+}
+
+.loginLink {
+  color: #F3F3F3;
+  right: 6vw;
+  font-family: 'Montserrat';
+  position: absolute;
+  border: solid 3px;
+  padding: 3px 10px 3px 10px;
+  border-radius: 5px;
+  font-size: 1.25em;
+  margin-top: 18px
+}
+
+.gradientBackground {
+  background: -moz-linear-gradient(45deg, rgba(77, 182, 171, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(77, 182, 171, 1)), color-stop(100%, rgba(0, 128, 128, 1)));
+  /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(77, 182, 171, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(77, 182, 171, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(77, 182, 171, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* ie10+ */
+  background: linear-gradient(45deg, rgba(77, 182, 171, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* w3c */
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#008080', endColorstr='#00aeeb', GradientType=1);
+  /* ie6-9 */
+  ;
+  height: 65vh;
+  min-height: 400px;
+}
+
+.welcomeBottomHalf {
+  background: #F9FCFF;
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.platformFeaturesTitle {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.leftMenuMain {
+  display: inline-block;
+  width: 215px;
+  height: 100%;
+  float: left;
+  margin-right: 35px;
+}
+
+.featureContainer {
+  width: 85%;
+  margin-left: auto;
+  text-align: justify;
+  margin-right: auto;
+}
+
+.featureBox {
+  width: 300px;
+  height: 150px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.listingContainer {
+  display: inline-block;
+  width: Calc(100% - 250px);
+  position: relative;
+}
+
+.listingCategories {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.searchOptionBottomContainer {
+  background: #f9f9f9;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.bottomContainerMain {
+  height: 100%;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  font-size: 12px;
+}
+
+.productContainer {
+  border-bottom: solid 1px rgba(107, 107, 107, 0.2);
+  padding: 16px 0px 16px 10px;
+}
+
+.categoryContainer {
+  margin: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.browseCategories {
+  color: white;
+}
+
+.specialSortOptions {
+  margin-left: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 178px;
+}
+
+.browseCategoriesContainer {
+  background: grey;
+  border-radius: 5px 5px 0px 0px;
+  padding: 3px;
+  text-align: center;
+  background: #3a9e94;
+}
+
+.userProfileImage {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.categoryNameContainer {
+  color: #388c83;
+  background: #f9f9f9;
+}
+
+#categoryCheckBox:hover {
+  cursor: pointer;
+}
+
+.secondaryCategory {
+  margin-left: 20px;
+}
+
+.starMinimum:hover .starDescription {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.starDescription {
+  color: #00aeeb;
+  font-size: 12px;
+  position: relative;
+  bottom: 2px;
+}
+
+
+.firstSearchTextSimple {
+  margin: 10px 10px 10px 5px;
+}
+
+.secondSearchTextSimple {
+  margin: 10px 10px 10px 0px;
+}
+
+.searchTextSimple {
+  display: inline-block;
+}
+
+.signupButton {
+  position: relative;
+  background: #FF6C6C;
+  font-size: 20px;
+  padding: 13px;
+  left: Calc(50% - 75px);
+  margin-top: 20px;
+  border-radius: 5px;
+  color: #fff;
+  box-sizing: border-box;
+  max-width: 150px;
+  font-family: arial;
+  text-align: center;
+  cursor: pointer;
+}
+
+.signupButton:hover {
+  background: #D34D58;
+  -moz-box-shadow: 0 1px 1px 0 #000;
+  -webkit-box-shadow: 0 1px 1px 0 #000;
+  box-shadow: 0 1px 1px 0 #000;
+  transition: all 300ms;
+}
+
+.signupButton:active {
+  top: 1px;
+}
+
+@media (max-width:1350px) {
+  .featureBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  .featureContainer {
+    width: 100%;
+  }
+
+  .firstFeatureBox {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width:1000px) {
+  .gradientBackground {
+    min-height: 525px;
+  }
+}
+
+@media (max-width:710px) {
+  .mainTitle {
+    font-size: 3.5em;
+  }
+
+  .secondaryTitle {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width:545px) {
+  .mainTitle {
+    font-size: 2.5em;
+  }
+
+  .secondaryTitle {
+    display: none;
+  }
+
+  .topLeftLogo {
+    padding: 13px 0px 0px 19px;
+    height: 51px;
+    width: 110px;
+  }
+
+  .loginButton {
+    transform: translate(-14%, 4%);
+  }
+
+  .welcomeText {}
+}
+
+.featureSpacer {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.iconFeatureBox {
+  display: block;
+  text-align: center;
+  font-size: 33px;
+  color: #00aeeb
+}
+
+.centerTitleText {
+  text-align: center;
+}
+
+.rawFloodSearchBar {}
+
+.subCategoryOpenContainer {
+  padding: 3px 10px 0px 5px !important;
+  font-style: italic;
+}
+
+.leftSideFilterContainer {
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  position: relative;
+  left: 18px;
+  margin-top: 18px;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.searchOptionsContainer {
+  height: 20px;
+  padding: 10px 10px 0px 10px;
+}
+
+.searchOptionsText {
+  font-size: 16px;
+}
+
+.searchOptionsSubContainer {
+  padding: 10px;
+}
+
+.searchOptionsCurrencyText {
+  font-size: 14px;
+}
+
+.searchOptionsCurrencySubContainer {
+  padding: 3px 0px 3px 0px;
+}
+
+.priceRangeContainer {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.priceRangeText {
+  font-size: 14px;
+}
+
+.priceRangeSubContainer {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.priceRangeInput {
+  width: 40px;
+  border: 1px solid #c2c2c2;
+  border-radius: 3px;
+  outline: none;
+  text-align: center;
+}
+
+.averageReviewContainer {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.averageReviewText {
+  margin-top: 10px;
+}
+
+.averageReviewSubContainer {
+  padding: 3px 0px 3px 0px;
+  font-size: 16px;
+}
+
+.averageReviewStarContainer {
+  cursor: pointer;
+}
+
+
+.sortBySearchContainer {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.resultsSearchContainer {
+  display: inline-block;
+}
+
+.welcomePageProductContainer {
+  text-align: center;
+  font-size: 16px;
+  padding: 50px 0px 50px 0px;
+}
+
+
+.productSearchIcon {
+  display: block;
+  font-size: 29px;
+  margin-top: 7px;
+  color: #c2c2c2;
+}
+
+.welcomePageListingTitle {
+  max-width: 590px;
+  display: inline-block;
+}
+
+.welcomeLoaderIcon {
+  margin: 0;
+  position: absolute;
+  top: Calc(50% + 150px);
+  left: Calc(50% - 100px);
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.averageRatingScoreContainer {
+  font-size: 16px;
+  margin-top: 2px;
+  margin-left: 6px;
+}
+
+.welcomePageProductListingVendor {
+  width: 475px;
+}
+
+.welcomePageSingleIconStar {
+  color: #ffd701;
+}
+
+.listingRatingsLength {
+  color: rgba(0, 0, 0, .9);
+}
+
+.welcomePageVendorNameLink {
+  color: rgba(0, 174, 235, .9);
+  cursor: pointer;
+  outline: none;
+}
+
+.welcomePagePriceAmount {
+  margin-top: 8px;
+  color: #1b1d1f;
+  font-size: 16px;
+  display: block;
+}
+

@@ -1,0 +1,17 @@
+<!--Overlay for file viewing-->
+<div style="position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; z-index: 1000; background: rgba(23, 22, 22, .85);" (click)="exitViewer()">
+</div>
+<!-- Top bar of file viewer start. Includes name, download, delete, and close button -->
+    <div class="fileViewerTopBar">
+        <div class="fileViewerNameContainer">
+            <i class="fa fa-file-text fileViewerNameIcon"> </i>
+            <span class="fileViewerNameText"> {{fileName}} </span>
+        </div>
+        <span class="fileCloseIcon" (click)="exitViewer()"> x </span>
+    </div>
+    <!-- Top bar of file viewer end -->
+    <div class="mediaViewerImport">
+        <!-- Display for image files -->
+        <img [hidden]="!loaded" [src]="utility.convertImageHashToLink(utility.currentImageBeingViewed)" (load)="loaded = true;" class="mainDocImage">
+
+    </div>

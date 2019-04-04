@@ -1,0 +1,20 @@
+<div class="genericPageContainer">
+ <searchBar> </searchBar>
+
+  <div class="updateStoreContainer">
+    <h1> Update your store </h1>
+    <span>Enter your store's PeerID and we will update your store's listings</span>
+    <input [(ngModel)]="storePeerId" placeholder="Example: QmbjKjCPcRD27CmzaPb5qMw2v5fveWWUTKthk6hgJfCYiD" (keyup.enter)="updateStore()" class="updateStoreInput" />
+    <div class="primaryButton updateStoreButton" (click)="updateStore()"> 
+      Update Store 
+      <i *ngIf="requestLoading" class="fa fa-spinner fa-spin updateStoreSpinner"></i>
+    </div>
+    <div>
+    <p-messages *ngIf="updateResponse" [(value)]="updateResponse" [closable]="false"></p-messages>
+    </div>
+  </div>
+
+
+</div>
+
+<footerBar></footerBar>

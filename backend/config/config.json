@@ -1,0 +1,19 @@
+{
+    "domain": "https://rawflood.com",
+    "development":
+    {
+        "username": "postgres",
+        "password": "thissearchenginehasthebestpasswords",
+        "database": "rawflood",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "postgres":
+    {
+        "url": "postgres://postgres:thissearchenginehasthebestpasswords@127.0.0.1:5432/rawflood"
+    },
+    "server":
+    {
+        "port": 443
+    }
+}
