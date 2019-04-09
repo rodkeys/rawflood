@@ -14,7 +14,7 @@ exports.returnSearchResults = async (req, res) => {
     }
 
     let searchEngineHeader = miscController.returnSearchEngineHeader(),
-    dbQuery = {
+        dbQuery = {
             limit: searchEngineHeader.listingsPerPage,
             offset: req.query.p * searchEngineHeader.listingsPerPage,
             include: [{
@@ -49,6 +49,9 @@ exports.returnSearchResults = async (req, res) => {
     }
     // Set base query
     if (!req.query.q || req.query.q == "*") {
+        dbQuery.order = [
+            ['updatedAt', 'DESC'],
+        ];
         let listingsAndCount = await models.listing.findAndCountAll(dbQuery);
 
         for (let i = 0; i < listingsAndCount.rows.length; i++) {
