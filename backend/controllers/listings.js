@@ -19,7 +19,7 @@ exports.returnSingleListing = (req, res) => {
     }).then((listingOne) => {
         listingOne = listingOne.dataValues;
         listingOne.averageRatingScore = 0;
-        if ((Date.now() - 604800000) > new Date(listingOne.createdAt).getTime()) {
+        if ((Date.now() - 604800000) > new Date(listingOne.updatedAt).getTime()) {
             listingOne.expiredListing = true;
         }
 
